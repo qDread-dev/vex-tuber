@@ -16,12 +16,12 @@ void draw_character(int character_info[3]) {
     int character_eyes_north_south = character_info[0];
     int character_eyes_east_west = character_info[1];
     int character_emotion = character_info[2];
+
     // Draw character
     std::string character_path = "/usd/char-" + std::to_string(character_eyes_north_south) +"-"+ std::to_string(character_eyes_east_west) +"-"+ std::to_string(character_emotion) + ".sprite";
     SpriteEngine engine;
     Sprite character = loadSprite(character_path);
     engine.addSprite(&character, 0, 0);
-
     
     uint32_t *pixels = new uint32_t[480 * 240];
     lv_obj_t *canvas = nullptr;
@@ -99,6 +99,8 @@ void opcontrol() {
         }
 
 
+
+        draw_character(character_appearance);
 
 		pros::delay(20);
 	}
