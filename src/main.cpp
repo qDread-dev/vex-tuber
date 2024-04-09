@@ -90,10 +90,13 @@ void opcontrol() {
 
         // emotions
 
+        // happy
         if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_A)) {
             character_appearance[2] = 1;
+        // sadge
         } else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {
             character_appearance[2] = 2;
+        // neutral
         } else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
             character_appearance[2] = 0;
         }
